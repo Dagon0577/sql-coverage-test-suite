@@ -1,0 +1,11 @@
+use test;
+drop table if exists `customer`;
+drop table if exists `company`;
+CREATE TABLE if not exists `customer` (`id` bigint(20) unsigned NOT NULL,`name` varchar(32) NOT NULL,`telephone` varchar(16) NOT NULL,`provinceid` tinyint(3) unsigned NOT NULL DEFAULT '0',`province` enum('Anhui','Aomen','Beijing','Chongqing','Fujian','Gansu','Guangdong','Guangxi','Guizhou','Hainan','Hebei','Heilongjiang','Henan','Hubei','Hunan','Jiangsu','Jiangxi','Jilin','Liaoning','Neimenggu','Ningxia','Qinghai','Shaanxi','Shandong','Shanghai','Shanxi','Sichuan','Taiwan','Tianjin','Xianggang','Xinjiang','Xizang','Yunnan','Zhejiang') DEFAULT NULL,`city` varchar(16) DEFAULT '',`address` varchar(64) DEFAULT NULL,PRIMARY KEY (`id`),UNIQUE KEY `telephone` (`telephone`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE if not exists `company` (`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,`name` varchar(64) NOT NULL,PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `customer` VALUES (1,'赵合肥','13912340001',1,'Anhui','合肥','某某街某某号'),(2,'钱澳门','13912340002',2,'Aomen','澳门','某某街某某号'),(3,'孙北京','13912340003',3,'Beijing','北京','某某街某某号'),(4,'李北京','13912340004',3,'Beijing','北京','某某街某某号'),(5,'周北京','13912340005',3,'Beijing','北京','某某街某某号'),(6,'吴北京','13912340006',3,'Beijing','北京','某某街某某号'),(7,'郑北京','13912340007',3,'Beijing','北京','某某街某某号'),(8,'王北京','13912340008',3,'Beijing','北京','某某街某某号'),(9,'冯北京','13912340009',3,'Beijing','北京','>某某街某某号'),(10,'陈北京','13912340010',3,'Beijing','北京','某某街某某号');
+INSERT INTO `company` VALUES (1,'UNIQLO'),(2,'NIKE'),(3,'Logitech'),(4,'SONY');
+select * from customer;
+select * from company;
+drop table if exists `customer`;
+drop table if exists `company`;

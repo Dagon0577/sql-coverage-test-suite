@@ -1,0 +1,33 @@
+version: '3.5'
+networks:
+  default:
+    external:
+       name: sql-coverage-test-suite
+services:
+    middleware-server-1:
+        image: mysql:5.7.21
+        container_name: middleware-server-1
+        hostname: middleware-server-1
+        privileged: true
+        stdin_open: true
+        tty: true
+        ports:
+            - "3323:3306"
+        networks:
+            default:
+                ipv4_address: 172.100.9.1
+        dns: 114.114.114.114
+
+    mysql_1:
+        image: mysql:5.7.21
+        container_name: mysql-1
+        hostname: mysql-1
+        privileged: true
+        stdin_open: true
+        tty: true
+        ports:
+            - "3311:3306"
+        networks:
+            default:
+                ipv4_address: 172.100.9.2
+        dns: 114.114.114.114

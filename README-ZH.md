@@ -1,5 +1,5 @@
 # sql-coverage-test-suite
-比较在分布式数据库和传统关系数据库之间执行SQL语句所返回的结果集。（暂时用MySQL代替中间件，即MySQL与MySQL比较）
+比较在分布式数据库和传统关系数据库之间执行SQL语句所返回的结果集。（暂时用MySQL代替中间件，即MySQL与MySQL比较,MySQL版本为5.7.21）
 
 ## 环境配置
 

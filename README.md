@@ -2,7 +2,7 @@
 
 - [Chinese documentation](README-ZH.md)
 
-Compare the result set returned by executing a SQL statement between a distributed database and a traditional relational database.(Temporarily replace the middleware with MySQL, that is, compare MySQL with MySQL)
+Compare the result set returned by executing a SQL statement between a distributed database and a traditional relational database.(Temporarily replace the middleware with MySQL, that is, compare MySQL with MySQL,MySQL version is 5.7.21)
 
 ## Environment configuration
 

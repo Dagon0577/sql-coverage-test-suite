@@ -83,10 +83,10 @@ def compareSQLResult(sql_path):
                         else:
                             continue
                     except Exception as msg:
-                        logging.info("error sql is " + command)
+                        logging.info(sqlFile + " fail sql is " + command)
                         logging.error(msg)
                         return 0
-                logging.info('sql finish.')
+                logging.info('sql pass.')
             f.close()
     db.commit()
     db.close()

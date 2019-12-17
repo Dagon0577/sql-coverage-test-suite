@@ -9,8 +9,8 @@ port = 3306
 
 middleware_host = "172.100.9.1"
 middleware_user = "root"
-middleware_password = "root"
-middleware_port = 3323
+middleware_password = "123456"
+middleware_port = 3306
 
 
 def compareSQLResult(sql_path):

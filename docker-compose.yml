@@ -5,7 +5,7 @@ networks:
        name: sql-coverage-test-suite
 services:
     middleware-server-1:
-        image: mysql:5.7.21
+        image: sql-coverage-test-suite-mysql5.7:v1.0
         container_name: middleware-server-1
         hostname: middleware-server-1
         privileged: true
@@ -13,20 +13,24 @@ services:
         tty: true
         ports:
             - "3323:3306"
+        volumes:
+            - /code/middleware-server-1:/var/lib/mysql/
         networks:
             default:
                 ipv4_address: 172.100.9.1
         dns: 114.114.114.114
 
     mysql_1:
-        image: mysql:5.7.21
+        image: sql-coverage-test-suite-mysql5.7:v1.0
         container_name: mysql-1
         hostname: mysql-1
+        tty: true
         privileged: true
         stdin_open: true
-        tty: true
         ports:
             - "3311:3306"
+        volumes:
+            - /code/mysql-1:/var/lib/mysql/
         networks:
             default:
                 ipv4_address: 172.100.9.2

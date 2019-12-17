@@ -1,4 +1,11 @@
 # sql-coverage-test-suite
+[![GitHub issues](https://img.shields.io/github/issues/Dagon0577/sql-coverage-test-suite.svg)](https://github.com/Dagon0577/sql-coverage-test-suite/issues)
+[![GitHub forks](https://img.shields.io/github/watchers/Dagon0577/sql-coverage-test-suite.svg)](https://github.com/Dagon0577/sql-coverage-test-suite/watchers)
+[![GitHub forks](https://img.shields.io/github/forks/Dagon0577/sql-coverage-test-suite.svg)](https://github.com/Dagon0577/sql-coverage-test-suite/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/Dagon0577/sql-coverage-test-suite.svg)](https://github.com/Dagon0577/sql-coverage-test-suite/stargazers)
+[![GitHub license](https://img.shields.io/github/license/Dagon0577/sql-coverage-test-suite.svg)](https://github.com/Dagon0577/sql-coverage-test-suite/blob/master/LICENSE)
+
+
 比较在分布式数据库和传统关系数据库之间执行SQL语句所返回的结果集。（暂时用MySQL代替中间件，即MySQL与MySQL比较,MySQL版本为5.7.21）
 
 ## 环境配置

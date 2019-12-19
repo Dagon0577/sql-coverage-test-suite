@@ -23,7 +23,7 @@ def compareSQLResult(sql_path):
     sqlFiles = os.listdir(sql_path)
     for sqlFile in sqlFiles:
         if not os.path.isdir(sqlFile):
-            f = open(sql_path+"/"+sqlFile, 'r', encoding='utf-8')
+            f = open(sql_path+"/"+sqlFile, 'r', encoding='utf-8', errors='ignore')
             for str in f:
                 str = str.strip()
                 if len(str) == 0:
@@ -90,6 +90,45 @@ def compareSQLResult(sql_path):
             f.close()
     db.commit()
     db.close()
+    middleware.commit()
+    middleware.close()
+    return 1
+
+
+def executeSQL(sql_path):
+    #db = pymysql.connect(host=host, user=user, password=password, port=port)
+    middleware = pymysql.connect(host=middleware_host, user=middleware_user,
+                                 password=middleware_password, port=middleware_port)
+    #cur = db.cursor()
+    middlewareCur = middleware.cursor()
+    logging.info(sql_path)
+    sqlFiles = os.listdir(sql_path)
+    for sqlFile in sqlFiles:
+        if not os.path.isdir(sqlFile):
+            f = open(sql_path+"/"+sqlFile, 'r', encoding='utf-8', errors='ignore')
+            for str in f:
+                str = str.strip()
+                if len(str) == 0:
+                    continue
+                if str[0] == '#':
+                    continue
+                elif str.startswith('/*'):
+                    continue
+                logging.info(str)
+                sql = str.split(';')
+                command = sql[0]
+                if not command.isspace() or command == '':
+                    try:
+                        #cur.execute(command)
+                        middlewareCur.execute(command)
+                    except Exception as msg:
+                        logging.info(sqlFile + " fail sql is " + command)
+                        logging.error(msg)
+                        return 0
+            f.close()
+            logging.info(' sql pass.')
+    #db.commit()
+    #db.close()
     middleware.commit()
     middleware.close()
     return 1

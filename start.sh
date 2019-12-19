@@ -18,4 +18,4 @@ else
 fi
 
 cd src/features/test
-behave test_case.feature
+behave testCase.feature

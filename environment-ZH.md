@@ -56,6 +56,12 @@ wget下载python3的源码包
 
 如果最后没提示出错，就代表正确安装了，在/usr/local/目录下就会有python3目录
 
+设置优先级
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+
 将原来的链接备份
 
     $ mv /usr/bin/python /usr/bin/python.bak
